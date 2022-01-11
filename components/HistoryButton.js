@@ -1,4 +1,4 @@
-import { CalendarIcon } from '@chakra-ui/icons';
+import { TimeIcon } from '@chakra-ui/icons';
 import { IconButton, Tooltip } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import useSWR, { useSWRConfig } from 'swr';
@@ -13,8 +13,8 @@ export default function HistoryButton() {
     <Tooltip label={data?.found ? 'Remove from history' : 'Add to history'}>
       <IconButton
         isLoading={!data}
-        colorScheme={data?.found ? 'purple' : 'gray'}
-        size="sm"
+        colorScheme={data?.found ? 'blue' : 'gray'}
+        size="lg"
         onClick={() => {
           mutate(`/api/history/${id}`, () =>
             fetcher(`/api/history/${id}`, {
@@ -23,7 +23,7 @@ export default function HistoryButton() {
           );
         }}
       >
-        <CalendarIcon />
+        <TimeIcon />
       </IconButton>
     </Tooltip>
   );

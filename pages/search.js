@@ -54,6 +54,7 @@ function SearchBar() {
     </InputGroup>
   );
 }
+
 function SearchResults() {
   const { terms } = useRouter().query;
   const { data, error } = useSWR(terms && `/api/search?terms=${terms}`);
