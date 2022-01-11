@@ -15,7 +15,22 @@ import {
   VStack,
   Button,
   Badge,
+  Center,
+  Stack,
+  Heading
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import Layout from '../components/Layout';
 import { fetcher } from '../utils/api';
+
+export default function History() {
+  return (
+    <Layout title="NUTflex">
+      <Center h="full">
+        <Stack>
+          <Heading as="h2">ON WORK</Heading>
+        </Stack>
+      </Center>
+    </Layout>
+  );
+}

@@ -58,7 +58,7 @@ function Header() {
           >
             <MenuItem href="/search">Search</MenuItem>
             <MenuItem href="/">Watchlist</MenuItem>
-            <MenuItem href="/">History</MenuItem>
+            <MenuItem href="/history">History</MenuItem>
           </Stack>
 
           <Spacer />
