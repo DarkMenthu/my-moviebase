@@ -21,7 +21,7 @@ function HistoryList() {
   if (!data?.data?.length) {
     return (
         <Center>
-          <Heading as="h2">Nothing to see in Watchlist</Heading>
+          <Heading as="h2">Nothing to see in History</Heading>
         </Center>
     )
   }
