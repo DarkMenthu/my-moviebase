@@ -7,14 +7,14 @@ import {
   Text,
   Button,
   Badge,
-  Container,
-  VStack,
   Center,
-  Heading
+  Heading,
+  Container,
+  VStack
 } from '@chakra-ui/react';
 
-function HistoryList() {
-  const { data, error } = useSWR(`/api/history`);
+function WatchlistList() {
+  const { data, error } = useSWR(`/api/watchlist`);
 
   console.log(data?.data);
 
@@ -27,12 +27,12 @@ function HistoryList() {
   }
   if (error) {
     return (
-      <Center>
-        <Heading as="h2" color="red">
-          Oops there is an error, please try again later: {JSON.stringify(error)}
-        </Heading>
-      </Center>
-  );
+        <Center>
+          <Heading as="h2" color="red">
+            Oops there is an error, please try again later: {JSON.stringify(error)}
+          </Heading>
+        </Center>
+    );
   }
 
   return (
@@ -40,7 +40,11 @@ function HistoryList() {
       {data.data.map(({ id, title }) => (
         <ListItem key={id}>
           <Link href={`/movies/${id}`} passHref>
-            <Button as="a" variant="link" rightIcon={<Badge></Badge>}>
+            <Button
+              as="a"
+              variant="link"
+              rightIcon={<Badge></Badge>}
+              >
               <Text as="span">{title} </Text>
             </Button>
           </Link>
@@ -50,12 +54,12 @@ function HistoryList() {
   );
 }
 
-export default function History() {
+export default function Watchlist() {
   return (
-    <Layout title="History">
+    <Layout title="Watchlist">
       <Container>
         <VStack spacing={4} align="stretch">
-          <HistoryList />
+          <WatchlistList />
         </VStack>
       </Container>
     </Layout>

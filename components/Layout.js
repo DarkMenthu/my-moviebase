@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-
 import {
   Box,
   Heading,
@@ -12,7 +11,8 @@ import {
   Spacer,
   VStack,
   Grid,
-  Center
+  Center,
+  Text
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
@@ -57,14 +57,16 @@ function Header() {
             spacing={10}
           >
             <MenuItem href="/search">Search</MenuItem>
-            <MenuItem href="/">Watchlist</MenuItem>
+            <MenuItem href="/watchlist">Watchlist</MenuItem>
             <MenuItem href="/history">History</MenuItem>
           </Stack>
 
           <Spacer />
 
           <Box display={[isOpen ? 'block' : 'none', , 'block']}>
-            <MenuItem href="/" variant="outline">What to watch</MenuItem>
+            <MenuItem href="/" variant="outline" disabled>
+              What to watch
+            </MenuItem>
           </Box>
         </Stack>
       </Container>
@@ -74,8 +76,8 @@ function Header() {
 
 const Footer = () => {
   return (
-    <div>Wish I had a copyright &#169; 2022</div>
-  );
+    <Text>Wish I had a copyright &#169; 2022</Text>
+  )
 }
 
 export default function Layout({ title, children }) {
