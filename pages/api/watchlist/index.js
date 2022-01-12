@@ -1,5 +1,5 @@
 
-import Watchlist from '../../../models/Watchlist';
+import Watchlist from '../../../models/WatchList';
 
 export default async function handler(req, res) {
   const { method } = req;
