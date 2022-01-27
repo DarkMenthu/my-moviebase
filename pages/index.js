@@ -1,12 +1,15 @@
 
-import { Center, Heading } from '@chakra-ui/react';
+import { Center, Heading, Stack, Text } from '@chakra-ui/react';
 import Layout from '../components/Layout';
 
 export default function Home() {
   return (
-    <Layout title="Moviebase">
+    <Layout title="NUTflex">
       <Center h="full">
-        <Heading as="h2">Moviebase is up and running</Heading>
+        <Stack>
+          <Heading as="h2">Welcome to NUTflex</Heading>
+          <Text>The movie world, in sandbox..</Text>
+        </Stack>
       </Center>
     </Layout>
   );

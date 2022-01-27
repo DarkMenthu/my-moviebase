@@ -11,6 +11,8 @@ import {
   Spacer,
   VStack,
   Grid,
+  Center,
+  Text
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
@@ -26,7 +28,7 @@ function Header() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box bg="purple.500">
+    <Box bg="red.400">
       <Container>
         <Stack
           as="nav"
@@ -36,8 +38,8 @@ function Header() {
           py="1.5rem"
         >
           <HStack justify="space-between">
-            <MenuItem href="/" mr={8}>
-              <Heading size="lg">Moviebase</Heading>
+            <MenuItem href="/" mr={50}>
+              <Heading size="xl">NUTflex&#9762;</Heading>
             </MenuItem>
 
             <Box display={['block', , 'none']} onClick={onToggle}>
@@ -52,15 +54,11 @@ function Header() {
             justify="start"
             align={['start', , 'center']}
             display={[isOpen ? 'flex' : 'none', , 'flex']}
-            spacing={4}
+            spacing={10}
           >
             <MenuItem href="/search">Search</MenuItem>
-            <MenuItem href="/" disabled>
-              Watchlist
-            </MenuItem>
-            <MenuItem href="/" disabled>
-              History
-            </MenuItem>
+            <MenuItem href="/watchlist">Watchlist</MenuItem>
+            <MenuItem href="/history">History</MenuItem>
           </Stack>
 
           <Spacer />
@@ -76,6 +74,12 @@ function Header() {
   );
 }
 
+const Footer = () => {
+  return (
+    <Text>Wish I had a copyright &#169; 2022</Text>
+  )
+}
+
 export default function Layout({ title, children }) {
   return (
     <>
@@ -86,9 +90,10 @@ export default function Layout({ title, children }) {
       <Grid minH="100vh">
         <VStack w="full" align="stretch" spacing={8}>
           <Header />
-          <Box as="main" h="full">
-            {children}
-          </Box>
+          <Box as="main" h="full">{children}</Box>
+          <Center>
+            <Footer />
+          </Center>
         </VStack>
       </Grid>
     </>
